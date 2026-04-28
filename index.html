@@ -182,6 +182,43 @@
         color: var(--accent-gold);
       }
 
+      .booking-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .field label {
+        font-weight: 600;
+        color: var(--text-main);
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        border: 1px solid rgba(58, 242, 255, 0.24);
+        border-radius: 10px;
+        background: rgba(9, 12, 24, 0.9);
+        color: var(--text-main);
+        padding: 0.75rem 0.85rem;
+        font: inherit;
+      }
+
+      .field textarea {
+        resize: vertical;
+        min-height: 110px;
+      }
+
+      .field-full {
+        grid-column: 1 / -1;
+      }
+
       .footer-cta {
         margin: 2rem auto 3rem;
         text-align: center;
@@ -202,6 +239,10 @@
         }
 
         .features {
+          grid-template-columns: 1fr;
+        }
+
+        .booking-form {
           grid-template-columns: 1fr;
         }
 
@@ -274,6 +315,58 @@
             </p>
           </article>
         </div>
+      </section>
+
+      <section class="section" id="reserva-formulario">
+        <h2>Formulario de reservas</h2>
+        <p class="subtitle" style="margin-bottom: 1rem">
+          Completa tus datos y te confirmaremos disponibilidad en menos de 24 horas.
+        </p>
+        <form class="booking-form">
+          <div class="field">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre y apellidos" required />
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" placeholder="nombre@correo.com" required />
+          </div>
+          <div class="field">
+            <label for="entrada">Fecha de entrada</label>
+            <input id="entrada" name="entrada" type="date" required />
+          </div>
+          <div class="field">
+            <label for="salida">Fecha de salida</label>
+            <input id="salida" name="salida" type="date" required />
+          </div>
+          <div class="field">
+            <label for="huespedes">Número de huéspedes</label>
+            <select id="huespedes" name="huespedes" required>
+              <option value="">Selecciona</option>
+              <option value="1">1 huésped</option>
+              <option value="2">2 huéspedes</option>
+              <option value="3">3 huéspedes</option>
+              <option value="4">4 huéspedes</option>
+              <option value="5+">5 o más</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="habitacion">Tipo de habitación</label>
+            <select id="habitacion" name="habitacion" required>
+              <option value="">Selecciona</option>
+              <option value="tatami-deluxe">Tatami Deluxe</option>
+              <option value="onsen-suite">Onsen Suite</option>
+              <option value="neo-ryokan-premium">Neo Ryokan Premium</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="comentarios">Peticiones especiales</label>
+            <textarea id="comentarios" name="comentarios" placeholder="Ej.: desayuno vegetariano, llegada tardía..."></textarea>
+          </div>
+          <div class="field field-full">
+            <button class="btn btn-primary" type="submit">Enviar solicitud de reserva</button>
+          </div>
+        </form>
       </section>
     </main>
 
