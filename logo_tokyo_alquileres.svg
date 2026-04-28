@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+  <title id="title">Tokyo Rentals Logo</title>
+  <desc id="desc">Logo para web de alquileres en Tokyo con casa, skyline y sol rojo.</desc>
+
+  <defs>
+    <linearGradient id="night" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0B1E3A"/>
+      <stop offset="100%" stop-color="#112E5B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#FF5A5F"/>
+      <stop offset="100%" stop-color="#E63946"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="300" rx="28" fill="url(#night)"/>
+
+  <!-- Sol estilo bandera japonesa -->
+  <circle cx="170" cy="120" r="62" fill="#E63946" opacity="0.95"/>
+
+  <!-- Casa principal -->
+  <g transform="translate(96,116)">
+    <path d="M0 62 L86 0 L172 62" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="26" y="62" width="120" height="92" rx="9" fill="#FFFFFF"/>
+    <rect x="74" y="98" width="24" height="56" rx="4" fill="#0B1E3A"/>
+    <rect x="42" y="80" width="20" height="20" rx="3" fill="#0B1E3A"/>
+    <rect x="110" y="80" width="20" height="20" rx="3" fill="#0B1E3A"/>
+  </g>
+
+  <!-- Skyline de Tokyo simplificado -->
+  <g transform="translate(320,70)" fill="#CFE3FF" opacity="0.95">
+    <rect x="0" y="86" width="26" height="84" rx="2"/>
+    <rect x="34" y="58" width="36" height="112" rx="2"/>
+    <rect x="78" y="102" width="24" height="68" rx="2"/>
+    <rect x="110" y="74" width="30" height="96" rx="2"/>
+    <rect x="148" y="50" width="44" height="120" rx="2"/>
+    <rect x="200" y="96" width="26" height="74" rx="2"/>
+    <rect x="234" y="68" width="30" height="102" rx="2"/>
+
+    <!-- Torre Tokyo minimal -->
+    <path d="M300 170 L320 30 L340 170 Z" fill="#FFB4B7"/>
+    <rect x="315" y="22" width="10" height="10" rx="2" fill="#FFB4B7"/>
+    <rect x="294" y="122" width="52" height="8" rx="4" fill="#FFB4B7"/>
+  </g>
+
+  <!-- Nombre de marca -->
+  <g transform="translate(550,108)">
+    <text x="0" y="52" font-family="'Segoe UI', 'Noto Sans JP', Arial, sans-serif" font-size="56" font-weight="700" letter-spacing="0.5" fill="#FFFFFF">TOKYO</text>
+    <text x="0" y="102" font-family="'Segoe UI', 'Noto Sans JP', Arial, sans-serif" font-size="42" font-weight="600" letter-spacing="2.4" fill="url(#accent)">RENTALS</text>
+    <rect x="2" y="116" width="266" height="6" rx="3" fill="#FFFFFF" opacity="0.35"/>
+    <text x="2" y="148" font-family="'Segoe UI', 'Noto Sans JP', Arial, sans-serif" font-size="20" fill="#CFE3FF" opacity="0.95">alquileres en Tokyo</text>
+  </g>
+</svg>
