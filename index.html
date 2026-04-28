@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sakura Neo Ryokan | Casa rural en Tokio</title>
+    <style>
+      :root {
+        --bg-dark: #0b0d19;
+        --bg-card: rgba(20, 24, 48, 0.78);
+        --accent-cyan: #3af2ff;
+        --accent-pink: #ff5ca8;
+        --accent-gold: #f8cf6d;
+        --text-main: #eef3ff;
+        --text-soft: #c1c9e9;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at 15% 20%, rgba(255, 92, 168, 0.2), transparent 35%),
+          radial-gradient(circle at 80% 0%, rgba(58, 242, 255, 0.25), transparent 30%),
+          linear-gradient(120deg, #070912, #121731 45%, #1d1233);
+        color: var(--text-main);
+        min-height: 100vh;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: min(1120px, 92%);
+        margin: auto;
+      }
+
+      .hero {
+        padding: 3.5rem 0 3rem;
+      }
+
+      .hero-card {
+        background: linear-gradient(145deg, rgba(21, 27, 56, 0.92), rgba(15, 15, 31, 0.88));
+        border: 1px solid rgba(58, 242, 255, 0.35);
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(58, 242, 255, 0.15);
+        padding: 2.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-card::after {
+        content: "東京 · TOKYO";
+        position: absolute;
+        top: 12px;
+        right: -35px;
+        font-size: 0.75rem;
+        letter-spacing: 0.22rem;
+        background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+        color: #11142c;
+        padding: 0.35rem 2.3rem;
+        transform: rotate(32deg);
+        font-weight: 800;
+      }
+
+      h1,
+      h2 {
+        font-family: "Poppins", "Arial", sans-serif;
+        letter-spacing: 0.03rem;
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 5vw, 3rem);
+        margin-bottom: 0.9rem;
+        line-height: 1.2;
+      }
+
+      .subtitle {
+        color: var(--text-soft);
+        max-width: 70ch;
+      }
+
+      .cta-row {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 999px;
+        padding: 0.9rem 1.35rem;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn-primary {
+        background: linear-gradient(90deg, var(--accent-pink), var(--accent-cyan));
+        color: #0c1024;
+        box-shadow: 0 8px 18px rgba(58, 242, 255, 0.3);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        border: 1px solid rgba(248, 207, 109, 0.75);
+        color: var(--accent-gold);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .section {
+        margin-top: 1.3rem;
+        background: var(--bg-card);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 22px;
+        padding: 1.6rem;
+        backdrop-filter: blur(8px);
+      }
+
+      .section h2 {
+        margin-bottom: 1rem;
+        font-size: clamp(1.3rem, 3.8vw, 1.9rem);
+      }
+
+      .features {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.95rem;
+      }
+
+      .features li {
+        padding: 0.95rem;
+        border-radius: 14px;
+        background: rgba(13, 17, 35, 0.8);
+        border: 1px solid rgba(58, 242, 255, 0.18);
+        color: var(--text-soft);
+      }
+
+      .features li strong {
+        display: block;
+        color: var(--text-main);
+        margin-bottom: 0.2rem;
+      }
+
+      .map-wrap {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      iframe {
+        display: block;
+        width: 100%;
+        min-height: 320px;
+        border: 0;
+      }
+
+      .reviews {
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .review {
+        background: rgba(9, 12, 24, 0.8);
+        border-left: 3px solid var(--accent-cyan);
+        border-radius: 10px;
+        padding: 0.9rem 1rem;
+      }
+
+      .review strong {
+        color: var(--accent-gold);
+      }
+
+      .footer-cta {
+        margin: 2rem auto 3rem;
+        text-align: center;
+      }
+
+      .footer-cta p {
+        color: var(--text-soft);
+        margin-bottom: 0.8rem;
+      }
+
+      @media (max-width: 760px) {
+        .hero {
+          padding-top: 1.8rem;
+        }
+
+        .hero-card {
+          padding: 1.3rem;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+        }
+
+        iframe {
+          min-height: 260px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero container">
+      <div class="hero-card">
+        <h1>Sakura Neo Ryokan — Casa Rural en Japón</h1>
+        <p class="subtitle">
+          Un refugio entre tradición y futuro: arquitectura de madera japonesa, iluminación neón estilo manga,
+          baños onsen privados y vistas al amanecer sobre jardines zen. Ideal para desconectar sin salir de Tokio.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contacto">Reservar ahora</a>
+          <a class="btn btn-secondary" href="#ubicacion">Ver ubicación</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section" id="caracteristicas">
+        <h2>Características destacadas</h2>
+        <ul class="features">
+          <li><strong>Habitaciones tatami deluxe</strong>Diseño minimalista con paneles shoji y camas futón premium.</li>
+          <li><strong>Onsen privado 24/7</strong>Baños termales con aromaterapia de yuzu y vista al jardín de bambú.</li>
+          <li><strong>Zona manga lounge</strong>Biblioteca visual cyberpunk, consolas retro y café matcha artesanal.</li>
+          <li><strong>Experiencia gastronómica kaiseki</strong>Menú local de temporada con opción vegetariana.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="ubicacion">
+        <h2>Ubicación en Tokio</h2>
+        <p class="subtitle" style="margin-bottom: 1rem">
+          Nos encontramos en Tokio, con acceso rápido a estaciones, templos y barrios icónicos como Asakusa y Shibuya.
+        </p>
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=Tokyo%20Japan&t=&z=11&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación en Tokio"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="section" id="resenas">
+        <h2>Reseñas de huéspedes</h2>
+        <div class="reviews">
+          <article class="review">
+            <p>
+              “Una mezcla perfecta entre ryokan clásico y estética de anime futurista. Descansamos increíble.”
+              <strong>— Laura M. (5/5)</strong>
+            </p>
+          </article>
+          <article class="review">
+            <p>
+              “El onsen privado y la atención del personal fueron de otro nivel. Volveremos seguro.”
+              <strong>— Daniel R. (5/5)</strong>
+            </p>
+          </article>
+          <article class="review">
+            <p>
+              “La ubicación en Tokio es ideal: tranquila de noche, conectada de día. Muy recomendable.”
+              <strong>— Sofía T. (5/5)</strong>
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-cta" id="contacto">
+      <p>¿Listo para reservar tu escapada japonesa?</p>
+      <a class="btn btn-primary" href="mailto:reservas@sakuraneoryokan.jp?subject=Reserva%20Casa%20Rural%20Tokio"
+        >Contactar para reservar</a
+      >
+    </footer>
+  </body>
+</html>
